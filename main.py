@@ -15,7 +15,7 @@ app = Flask(__name__)
 #CORS(app,resource=r'/*')
 
 
-@app.route('/url',methods=['POST'])
+@app.route('/',methods=['POST'])
 def func():
     if request.method=="POST":
         url=request.form.get("u")
@@ -24,7 +24,3 @@ def func():
         return jsonify(code=0, data=res)
 
 
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=8899)
